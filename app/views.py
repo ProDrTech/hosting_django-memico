@@ -10,7 +10,7 @@ import requests, json
 class IndexView(View):
     def get(self, request):
         start_date = date(2025, 5, 1)
-        end_date = date.today()
+        end_date = date(2025, 5, 31)
         cinemas = Cinemas.objects.all()
         release_date = Cinemas.objects.filter(created_at__range=(start_date, end_date))
 
